@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prilla's Collection | Collections</title>
+   <!-- CSS
+        <link rel="stylesheet" href="styles.css"> -->
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #0b1a49;
+    }
+
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+/* Header */
+    header {
+      background-color: #0b1a49;
+      display: flex;
+      justify-content:space-evenly;
+      align-items: center;
+      padding: 20px 80px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #3ea8ff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #3ea8ff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('images/shop3.jpeg') center/cover no-repeat;
+      height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 26, 73, 0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-content h2 {
+      font-size: 58px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #e8e8e8;
+    }
+
+    .hero-content a {
+      background-color: #3ea8ff;
+      border: none;
+      padding: 14px 40px;
+        text-decoration: none;
+      border-radius: 40px;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero-content button:hover {
+      background-color: #ffffff;
+      color: #0b1a49;
+    }
+
+    .collection-section h2 {
+      font-size: 34px;
+      color: #1a1a40;
+      border-bottom: 3px solid #9ec8ff;
+      display: inline-block;
+      margin-bottom: 80px;
+      margin-top: 5%;
+      margin-left:40% ;
+    }
+.h2{
+  align-items: center;
+}
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .collection-item {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .collection-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .collection-item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+
+    .collection-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .collection-item h3 {
+      text-align: center;
+      padding: 15px;
+      background-color: #e6efff;
+      color: #1a1a40;
+      font-size: 20px;
+    }
+/* Footer */
+    footer {
+      background: #0b1a49;
+      color: #fff;
+      padding: 80px 80px 40px;
+      position: relative;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .footer-about h2 {
+      color: #3ea8ff;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .footer-about p {
+      color: #ccc;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .footer-contact h3,
+    .footer-hours h3 {
+      color: #3ea8ff;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .footer-contact ul,
+    .footer-hours ul {
+      list-style: none;
+    }
+
+    .footer-contact li,
+    .footer-hours li {
+      color: #ddd;
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact i {
+      color: #3ea8ff;
+      font-size: 16px;
+    }
+
+    .footer-socials {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .footer-socials a {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 50%;
+      background: #3ea8ff;
+      color: #fff;
+      font-size: 18px;
+      margin: 0 8px;
+      transition: 0.3s ease;
+    }
+
+    .footer-socials a:hover {
+      background: #fff;
+      color: #0b1a49;
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-contact li, .footer-hours li {
+        justify-content: center;
+      }
+    }
+    .logo{
+      height: 90px;
+      width: 90px;
+      }
+  </style>
+</head>
+<body>
+
+<body>
+  <header>
+    <img src="images/Capture-removebg-preview.png" class="logo">
+    <h1>Prilla's Collection</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="Collection.html">COLLECTION</a></li>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Ladies Wear Section -->
+  <section class="collection-section" id="ladies">
+    <h2>Ladies Wear</h2>
+    <div class="collection-grid">
+      <div class="collection-item">
+        <img src="images/gown.jpeg" alt="Ladies Wear 1">
+        <h3>Elegant Gown</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/summer.jpeg" alt="Ladies Wear 2">
+        <h3>Summer Dress</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/office.jpeg" alt="Ladies Wear 3">
+        <h3>Office Outfit</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Men’s Wear Section -->
+  <section class="collection-section" id="men">
+    <h2>Men’s Wear</h2>
+    <div class="collection-grid">
+      <div class="collection-item">
+        <img src="images/suit.jpeg" alt="Men Wear 1">
+        <h3>Classic Suit</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/casual.jpeg" alt="Men Wear 2">
+        <h3>Casual Look</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/denim.jpeg" alt="Men Wear 3">
+        <h3>Denim Vibe</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sneakers Section -->
+  <section class="collection-section" id="sneakers">
+    <h2>Sneakers</h2>
+    <div class="collection-grid">
+      <div class="collection-item">
+        <img src="images/white.jpeg" alt="Sneaker 1">
+        <h3>White Classic</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/street.jpeg" alt="Sneaker 2">
+        <h3>Street Style</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/designer.jpeg" alt="Sneaker 3">
+        <h3>Designer Sneaks</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perfumes Section -->
+  <section class="collection-section" id="perfumes">
+    <h2>Perfumes</h2>
+    <div class="collection-grid">
+      <div class="collection-item">
+        <img src="images/p1.jpeg" alt="Perfume 1">
+        <h3>Luxury Fragrance</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/p2.jpeg" alt="Perfume 2">
+        <h3>Evening Aroma</h3>
+      </div>
+      <div class="collection-item">
+        <img src="images/p3.jpeg" alt="Perfume 3">
+        <h3>Signature Scent</h3>
+      </div>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Prilla's Collection</h2>
+        <p>Redefining fashion with elegance and confidence. Discover timeless looks for men and women that express your true style.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Dansoman, Banana Inn, near Goodnight Hotel</li>
+          <li><i class="fas fa-phone"></i> +233 25 688 7430</li>
+          <li><i class="fas fa-envelope"></i> info@prillascollection.com</li>
+        </ul>
+      </div>
+
+      <div class="footer-hours">
+        <h3>Working Hours</h3>
+        <ul>
+          <li>Mon – Fri: 9:00am – 8:00pm</li>
+          <li>Saturday: 10:00am – 6:00pm</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/PricysF2315"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 Prilla's Collection. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing</title>
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="productStyle.css">
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+/* Header */
+    header {
+      background-color: #0b1a49;
+      display: flex;
+      justify-content:space-evenly;
+      align-items: center;
+      padding: 20px 80px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #3ea8ff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #3ea8ff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('images/shop3.jpeg') center/cover no-repeat;
+      height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 26, 73, 0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-content h2 {
+      font-size: 58px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #e8e8e8;
+    }
+
+    .hero-content a {
+      background-color: #3ea8ff;
+      border: none;
+      padding: 14px 40px;
+        text-decoration: none;
+      border-radius: 40px;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero-content button:hover {
+      background-color: #ffffff;
+      color: #0b1a49;
+    }
+    /* Footer */
+    footer {
+      background-color: #01010c;
+      color:white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+    }
+
+    .social-icons {
+      margin-bottom: 15px;
+    }
+
+    .social-icons a img {
+      width: 35px;
+      height: 35px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+      filter: brightness(0) invert(1);
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.2);
+      filter: brightness(0) invert(0.6);
+    }
+
+   /* Footer */
+    footer {
+      background: #0b1a49;
+      color: #fff;
+      padding: 80px 80px 40px;
+      position: relative;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .footer-about h2 {
+      color: #3ea8ff;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .footer-about p {
+      color: #ccc;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .footer-contact h3,
+    .footer-hours h3 {
+      color: #3ea8ff;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .footer-contact ul,
+    .footer-hours ul {
+      list-style: none;
+    }
+
+    .footer-contact li,
+    .footer-hours li {
+      color: #ddd;
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact i {
+      color: #3ea8ff;
+      font-size: 16px;
+    }
+
+    .footer-socials {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .footer-socials a {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 50%;
+      background: #3ea8ff;
+      color: #fff;
+      font-size: 18px;
+      margin: 0 8px;
+      transition: 0.3s ease;
+    }
+
+    .footer-socials a:hover {
+      background: #fff;
+      color: #0b1a49;
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-contact li, .footer-hours li {
+        justify-content: center;
+      }
+    }
+     
+    .logo{
+      height: 90px;
+      width: 90px;
+     }
+  </style>
+</head>
+<body>
+  <header>
+      <img src="images/Capture-removebg-preview.png" class="logo">
+    <h1>Prilla's Collection</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="Men's Wear.html">MEN</a></li>
+        <li><a href="Ladies Wear.html">LADIES</a></li>
+        <li><a href="Sneakers.html">SNEAKERS</a></li>
+        <li><a href="Perfumes.html">PERFUMES</a></li>
+        <li><a href="Accessories.html">ACCESSORIES</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div class="products-container">
+
+<!-- card 1 -->
+    <div class="product-card">
+    <div class="product-image">
+        <img src="images/set l.jpeg" alt="Luxury Gold Accessories Set(Ladies)">
+    </div>
+    <div class="product-info">
+          <div class="brand">Prilla's Collection</div>
+        <div class="product-name">Luxury Gold Accessories Set(Ladies)</div>
+        
+        <div class="prices">
+           <span class="current-price" >GH&#8373;1,900</span>
+           <span class="original-price" >GH&#8373;2000</span>
+           <span class="discount-price" >GH&#8373;10%</span>
+        </div>
+        <button class="buy-now-btn" data-product="Luxury Gold Accessories Set(Ladies)"  data-price="1,900" data-image="images/set l.jpeg">Buy Now</button>
+        </div>
+    </div>
+    <!-- card 2 -->
+
+       <div class="product-card">
+        <div class="product-image">
+     <img src="images/set m.jpeg" alt="Luxury Gold Accessories Set(Men)">
+    
+        </div>
+    
+        <div class="product-info">
+              <div class="brand">Prilla's Collection</div>
+            <div class="product-name">Luxury Gold Accessories Set(Men)</div>
+            
+            <div class="prices">
+               <span class="current-price" >GH&#8373;2,500</span>
+               <span class="original-price" >GH&#8373;2,700</span>
+               <span class="discount-price" >GH&#8373;10%</span>
+    
+            </div>
+<button class="buy-now-btn" data-product="Luxury Gold Accessories Set(Men)"  data-price="2,500" data-image="images/set m.jpeg">Buy Now</button>
+            </div>
+           </div>
+
+
+
+
+<!-- card 3 -->
+
+           <div class="product-card">
+            <div class="product-image">
+        
+                <img src="images/watch l.jpeg" alt="Ladies Watch">
+        
+            </div>
+        
+            <div class="product-info">
+                  <div class="brand">Prilla's Collection</div>
+                <div class="product-name">Ladies Watch</div>
+                
+                <div class="prices">
+                   <span class="current-price" >GH&#8373;230</span>
+                   <span class="original-price" >GH&#8373;250</span>
+                   <span class="discount-price" >GH&#8373;5%</span>
+        
+                </div>
+                <button class="buy-now-btn" data-product="Ladies Watch"  data-price="230" data-image="image/watch l.jpeg">Buy Now</button>
+                </div>
+               </div>
+
+
+
+<!-- card 4 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/watch m.jpeg" alt="Men Watch">
+            
+                </div>
+            
+                <div class="product-info">
+                      <div class="brand">Prilla's Collection</div>
+                    <div class="product-name">Men Watch</div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;280</span>
+                       <span class="original-price" >GH&#8373;290</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Men Watch "  data-price="280" data-image="images/watch m.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+              
+                   <!-- card 5 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/neck m.jpeg" alt="Men necklace">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection</div>
+                    <div class="product-name">Men necklace </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;90</span>
+                       <span class="original-price" >GH&#8373;100</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Men necklace "  data-price="90" data-image="images/neck m.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                   <!-- card 6 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/neck l.jpeg" alt="Ladies necklace">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection </div>
+                    <div class="product-name">Ladies necklace</div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;110</span>
+                       <span class="original-price" >GH&#8373;130</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Ladies necklace"  data-price="110" data-image="images/neck l.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                   <!-- card 7 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/braslet.jpeg" alt="Bracelet">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection </div>
+                    <div class="product-name">Bracelet </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;65</span>
+                       <span class="original-price" >GH&#8373;70</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Bracelet "  data-price="65" data-image="images/braslet.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                   <!-- card 8-->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/ear.jpeg" alt="Earrings">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection </div>
+                    <div class="product-name">Earrings</div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;45</span>
+                       <span class="original-price" >GH&#8373;50</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Earrings "  data-price="45" data-image="images/ear.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                  <!-- card 9 -->
+    <div class="product-card">
+    <div class="product-image">
+        <img src="images/ring.jpeg" alt="Rings">
+    </div>
+    <div class="product-info">
+          <div class="brand">Prilla's Collection</div>
+        <div class="product-name">Rings</div>
+        
+        <div class="prices">
+           <span class="current-price" >GH&#8373;150</span>
+           <span class="original-price" >GH&#8373;160</span>
+           <span class="discount-price" >GH&#8373;5%</span>
+        </div>
+        <button class="buy-now-btn" data-product="Rings"  data-price="150" data-image="images/ring.jpeg">Buy Now</button>
+        </div>
+    </div>
+                   <!-- card 10 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/glasses.jpeg" alt="Sunglasses">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection </div>
+                    <div class="product-name">Sunglasses </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;70</span>
+                       <span class="original-price" >GH&#8373;80</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Sunglasses"  data-price="70" data-image="images/glasses.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                  <!-- card 11-->
+
+           <div class="product-card">
+            <div class="product-image">
+        
+                <img src="images/hand.jpeg" alt="Handbag">
+        
+            </div>
+        
+            <div class="product-info">
+                  <div class="brand">Prilla's Collection</div>
+                <div class="product-name">Handbag</div>
+                
+                <div class="prices">
+                   <span class="current-price" >GH&#8373;190</span>
+                   <span class="original-price" >GH&#8373;200</span>
+                   <span class="discount-price" >GH&#8373;5%</span>
+        
+                </div>
+                <button class="buy-now-btn" data-product="Handbag"  data-price="190" data-image="image/hand.jpeg">Buy Now</button>
+                </div>
+               </div>
+                  <!-- card 12 -->
+    <div class="product-card">
+    <div class="product-image">
+        <img src="images/clutches.jpeg" alt="Clutches">
+    </div>
+    <div class="product-info">
+          <div class="brand">Prilla's Collection</div>
+        <div class="product-name">Clutches</div>
+        
+        <div class="prices">
+           <span class="current-price" >GH&#8373;250</span>
+           <span class="original-price" >GH&#8373;270</span>
+           <span class="discount-price" >GH&#8373;5%</span>
+        </div>
+        <button class="buy-now-btn" data-product="Clutches"  data-price="250" data-image="images/clutches.jpeg">Buy Now</button>
+        </div>
+    </div>
+                   <!-- card 13 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/cross l.jpeg" alt="Crossbody Bag(Ladies)">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection </div>
+                    <div class="product-name">Crossbody Bag(Ladies) </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;140</span>
+                       <span class="original-price" >GH&#8373;160</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Crossbody Bag(Ladies)"  data-price="140" data-image="images/cross.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                  <!-- card 14-->
+
+       <div class="product-card">
+        <div class="product-image">
+     <img src="images/cross m.jpeg" alt="Crossbody Bag(Men)">
+    
+        </div>
+    
+        <div class="product-info">
+              <div class="brand">Prilla's Collection</div>
+            <div class="product-name">Crossbody Bag(Men)</div>
+            
+            <div class="prices">
+               <span class="current-price" >GH&#8373;200</span>
+               <span class="original-price" >GH&#8373;220</span>
+               <span class="discount-price" >GH&#8373;5%</span>
+    
+            </div>
+<button class="buy-now-btn" data-product="Crossbody Bag(Men)"  data-price="200" data-image="images/cross m.jpeg">Buy Now</button>
+            </div>
+           </div>
+
+
+                   <!-- card 15 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/purse.jpeg" alt="Purses">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection</div>
+                    <div class="product-name">Purses </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;45</span>
+                       <span class="original-price" >GH&#8373;50</span>
+                       <span class="discount-price" >GH&#8373;10%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Purses"  data-price="45" data-image="images/purse.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                   <!-- card 16 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/wallet.jpeg" alt="Wallet">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand"> <p>Prilla's Collection</p> </div>
+                    <div class="product-name">Wallet </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;45</span>
+                       <span class="original-price" >GH&#8373;50</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Wallet "  data-price="45" data-image="images/wallet.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+                   <!-- card 17 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/set bag.jpeg" alt="Backpacks">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection </div>
+                    <div class="product-name">Backpacks </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;320</span>
+                       <span class="original-price" >GH&#8373;330</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Backpacks"  data-price="320" data-image="images/set bag.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                  <!-- card 18-->
+
+       <div class="product-card">
+        <div class="product-image">
+     <img src="images/crochet.jpeg" alt="Crochet Hat">
+    
+        </div>
+    
+        <div class="product-info">
+              <div class="brand">Prilla's Collection</div>
+            <div class="product-name">Crochet Hat</div>
+            
+            <div class="prices">
+               <span class="current-price" >GH&#8373;50</span>
+               <span class="original-price" >GH&#8373;65</span>
+               <span class="discount-price" >GH&#8373;2%</span>
+    
+            </div>
+<button class="buy-now-btn" data-product="Crochet Hat"  data-price="50" data-image="images/crochet.jpeg">Buy Now</button>
+            </div>
+           </div>
+
+
+                   <!-- card 19 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/sf.jpeg" alt="Scarve">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand">Prilla's Collection</div>
+                    <div class="product-name">Scarve </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;18</span>
+                       <span class="original-price" >GH&#8373;20</span>
+                       <span class="discount-price" >GH&#8373;2%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Scarve"  data-price="18" data-image="images/sf.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                   <!-- card 20 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/hat.jpeg" alt=" Hat">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand"> <p>Prilla's Collection</p> </div>
+                    <div class="product-name">Hat</div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;170</span>
+                       <span class="original-price" >GH&#8373;190</span>
+                       <span class="discount-price" >GH&#8373;3%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Hat "  data-price="90" data-image="images/hat.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+                    <!-- card 21 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/beanies.jpeg" alt=" Beanies">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand"> <p>Prilla's Collection</p> </div>
+                    <div class="product-name">Beanies </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;30</span>
+                       <span class="original-price" >GH&#8373;40</span>
+                       <span class="discount-price" >GH&#8373;5%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Beanies "  data-price="30" data-image="images/beanies.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                    <!-- card 22 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/cut.jpeg" alt="Stanly Cup ">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand"> <p>Prilla's Collection</p> </div>
+                    <div class="product-name">Stanly Cup </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;1,100</span>
+                       <span class="original-price" >GH&#8373;1,200</span>
+                       <span class="discount-price" >GH&#8373;10%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Stanly Cup "  data-price="1,100" data-image="images/cut.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                    <!-- card 23 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/BL.jpeg" alt="Belts">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand"> <p>Prilla's Collection</p> </div>
+                    <div class="product-name">Belts </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;50</span>
+                       <span class="original-price" >GH&#8373;55</span>
+                       <span class="discount-price" >GH&#8373;2%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product="Belts "  data-price="50" data-image="images/BL.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+
+                    <!-- card 24 -->
+
+               <div class="product-card">
+                <div class="product-image">
+            
+                    <img src="images/buckle.jpeg" alt=" Belt Buckles">
+            
+                </div>
+            
+                <div class="product-info">
+                    <div class="brand"> <p>Prilla's Collection</p> </div>
+                    <div class="product-name"> Belt Buckles </div>
+                    
+                    <div class="prices">
+                       <span class="current-price" >GH&#8373;25</span>
+                       <span class="original-price" >GH&#8373;30</span>
+                       <span class="discount-price" >GH&#8373;2%</span>
+            
+                    </div>
+                    <button  class="buy-now-btn" data-product=" Belt Buckles "  data-price="25" data-image="images/buckle.jpeg">Buy Now</button>
+                    </div>
+                   </div>
+                  </div>
+
+
+
+          <div id="purchaseForm" class="purchase-form">     
+            <h2>Complete your Purchase</h2>
+            <div class="product-sumary">
+        <img id="selectedProductImage" src="" alt="selected product" >
+        
+        <div>
+            <h3 id="selectedProductName"></h3>
+            <p id="selectedProductPrice"></p>
+        </div>
+
+         </div>
+
+         <form id="checkoutForm">
+
+            <div class="form-group">
+                <label for="name">full name </label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+
+             <div class="form-group">
+                <label for="email">Email Address </label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+               <div class="form-group">
+                <label for="address">Shipping Address </label>
+                <input type="address" id="address" name="address" required>
+            </div>
+
+             <div class="form-group">
+                <label for="phone">Phone Number </label>
+                <input type="phone" id="phone" name="phone" required>
+            </div>
+
+              <button type="submit" class="submit-btn">Send Order via Email</button>
+            </form>
+
+            <div class="email-instructions">
+                <h3>How it Works</h3>
+                <p>When you click "send Order vai email",
+                    your default email client will open
+                    with a pre-filled email containing your order
+                    details. Simply review the information and click
+                     send to place your order.
+                </p>
+            </div>
+         </div>
+
+            <div id="thankYou" class="thank-you">
+            <i class="fas fa-check-circle"></i>
+            <h2>Thank You For Your Purchase</h2>
+             
+            <p>Your order email has been prepared.
+             please check your email client
+             and click send to complete your order.
+            </p>
+            <p>We'll process your order once we receive your email.</p>
+
+          </div>
+       
+         
+          
+     <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Prilla's Collection</h2>
+        <p>Redefining fashion with elegance and confidence. Discover timeless looks for men and women that express your true style.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Dansoman, Banana Inn, near Goodnight Hotel</li>
+          <li><i class="fas fa-phone"></i> +233 25 688 7430</li>
+          <li><i class="fas fa-envelope"></i> info@prillascollection.com</li>
+        </ul>
+      </div>
+
+      <div class="footer-hours">
+        <h3>Working Hours</h3>
+        <ul>
+          <li>Mon – Fri: 9:00am – 8:00pm</li>
+          <li>Saturday: 10:00am – 6:00pm</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/PricysF2315"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 Prilla's Collection. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>
+<script src="script.js"></script>
+</body>
+
+</html>>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Prilla's Collection</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #0b1a49;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #0b1a49;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 30px 80px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #3ea8ff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #3ea8ff;
+    }
+
+    .hero {
+      background: url('images/perfumes.jpeg') center/cover no-repeat;
+      height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 26, 73, 0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: black;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 80px;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form h2 {
+      color: #b76e79;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: #b76e79;
+      outline: none;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn {
+      background-color: #b76e79;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #a05a65;
+    }
+
+    .contact-info {
+      padding: 20px 0;
+    }
+
+    .contact-info h2 {
+      color: #b76e79;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .info-item {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    .info-icon {
+      background-color: #f5e6e8;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      color: #b76e79;
+      font-size: 20px;
+    }
+
+    .info-content h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .social-links {
+      display: flex;
+      margin-top: 30px;
+      gap: 15px;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #b76e79;
+      background-color: #f5e6e8;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-links a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(183, 110, 121, 0.4);
+      color: #fff;
+    }
+
+    .social-links a.facebook:hover {
+      background-color: #1877f2;
+    }
+    .social-links a.instagram:hover {
+      background-color: #e4405f;
+    }
+    .social-links a.twitter:hover {
+      background-color: #000;
+    }
+    .social-links a.linkedin:hover {
+      background-color: #0077b5;
+    }
+
+    .big-map {
+      width: 100%;
+      height: 500px;
+      border: none;
+      margin-top: 60px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .map{
+      width:100%;
+
+
+    }
+
+    footer {
+      background: #0b1a49;
+      color: #fff;
+      padding: 80px 80px 40px;
+      position: relative;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .footer-about h2 {
+      color: #3ea8ff;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .footer-about p {
+      color: #ccc;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .footer-contact h3,
+    .footer-hours h3 {
+      color: #3ea8ff;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .footer-contact ul,
+    .footer-hours ul {
+      list-style: none;
+    }
+
+    .footer-contact li,
+    .footer-hours li {
+      color: #ddd;
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact i {
+      color: #3ea8ff;
+      font-size: 16px;
+    }
+
+    .footer-socials {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .footer-socials a {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 50%;
+      background: #3ea8ff;
+      color: #fff;
+      font-size: 18px;
+      margin: 0 8px;
+      transition: 0.3s ease;
+    }
+
+    .footer-socials a:hover {
+      background: #fff;
+      color: #0b1a49;
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+.big-map{
+  width: 100;
+  height: 100;
+}
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-contact li, .footer-hours li {
+        justify-content: center;
+      }
+    }
+    .logo{
+      height: 90px;
+      width: 90px;
+      }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+      <img src="images/Capture-removebg-preview.png" class="logo">
+    <h1>Prilla's Collection</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="Collection.html">COLLECTION</a></li>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+    </div>
+  </section>
+
+  <section class="contact-section container">
+    <!-- ✅ Fixed form -->
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" class="form-control" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" class="form-control" placeholder="Subject" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <div class="info-item">
+        <div class="info-icon"><i>📍</i></div>
+        <div class="info-content">
+          <h3>Our Location</h3>
+          <p>Dansoman, Banana Inn<br>near Goodnight Hotel</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i>📞</i></div>
+        <div class="info-content">
+          <h3>Phone Number</h3>
+          <p>+ (233) 25 688 7430</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i>✉️</i></div>
+        <div class="info-content">
+          <h3>Email Address</h3>
+          <p>info@prillascollection.com</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i>🕒</i></div>
+        <div class="info-content">
+          <h3>Business Hours</h3>
+          <p>Monday - Friday: 9am - 8pm<br>Saturday: 10am - 6pm<br>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/233256887430" class="whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+     <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d496.39769884916376!2d-0.25970727946183975!3d5.540068292387591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgh!4v1761577560166!5m2!1sen!2sgh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Prilla's Collection</h2>
+        <p>Redefining fashion with elegance and confidence. Discover timeless looks for men and women that express your true style.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Dansoman, Banana Inn, near Goodnight Hotel</li>
+          <li><i class="fas fa-phone"></i> +233 25 688 7430</li>
+          <li><i class="fas fa-envelope"></i> info@prillascollection.com</li>
+        </ul>
+      </div>
+
+      <div class="footer-hours">
+        <h3>Working Hours</h3>
+        <ul>
+          <li>Mon – Fri: 9:00am – 8:00pm</li>
+          <li>Saturday: 10:00am – 6:00pm</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/PricysF2315"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 Prilla's Collection. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const mailto = `mailto:info@prillascollection.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+        `Hello Prilla's Collection,%0D%0A%0D%0AMy name is ${name} (${email}).%0D%0A%0D%0A${message}%0D%0A%0D%0AThank you.`
+      )}`;
+
+      window.location.href = mailto;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
